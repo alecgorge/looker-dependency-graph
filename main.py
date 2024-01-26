@@ -15,7 +15,7 @@ INPUT_MODELS_PATH = "../discord-looker-revenue"
 MODEL_FILE_EXTENSION = "*.model.lkml"
 VIEW_FILE_EXTENSION = "*.view.lkml"
 OUTPUT_FILE_PATH = "output/dependency_graph.gv"
-RENDER_FORMAT = "png"
+RENDER_FORMAT = "pdf"
 
 
 class Node(UserDict):
@@ -287,7 +287,6 @@ def build_graph(nodes: Nodes, manifest: dict, no_tables: bool) -> Digraph:
 
     for node in view_nodes:
         directory = node.directory_label(prefix_path)
-        print(directory)
 
         if directory not in view_nodes_by_directory:
             view_nodes_by_directory[directory] = []
